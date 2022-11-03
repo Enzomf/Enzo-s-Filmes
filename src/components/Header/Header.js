@@ -1,50 +1,42 @@
-import { HeaderC, NavBar, NavBarItems, NavBarItem, Indicator, SeachWrapper, SeachBar } from "./styles"
-import { useState, useRef, React } from "react"
+import { HeaderC, NavBar, SeachWrapper, SeachBar } from "./styles"
+import { useState  } from "react"
 import { FaSearch } from "react-icons/fa"
 import logo from "../../images/logo.svg"
 import { Link } from "react-router-dom"
-
+import { Tab, Tabs } from "@mui/material"
 
 
 export default function Header() {
 
-    let path = window.location.pathname
-
-    const [indicatorPosition, setIndicatorPosition] = useState();
-    const [indicatorWidth, setIndicatorWidth] = useState();
-    console.log(indicatorPosition, indicatorWidth)
-    const navElement = useRef();
-
-    function handleClick(e) {
-
-        const linkLeft = e.target.getBoundingClientRect().left;
-        const navLeft = navElement.current.getBoundingClientRect().left;
-        const linkWidth = e.target.getBoundingClientRect().width;
-        const singleLinkWidth = linkWidth;
-        const singleLinkLeft = linkLeft - navLeft;
-
-        setIndicatorPosition(singleLinkLeft);
-        setIndicatorWidth(singleLinkWidth);
-
-        document.querySelectorAll(".nav_link").forEach(link => {
-            link.classList.remove("active")
-        })
-        e.target.classList.add("active")
-
-    }
-    
+    const path = window.location.pathname
+    const [value, setValue] = useState(path === "/home" ? 0 : path === "/filmes" ? 1 : path === "/series" ? 2 : 0)
     return (
         <HeaderC>
             <a href={"/"}>
                 <img src={logo} alt="logo" width="55" />
             </a>
             <NavBar>
-                <NavBarItems ref={navElement}>
+                <Tabs sx={{
+                    "& a":{
+                        color:"#FFFF", fontFamily: "'Bebas Neue', cursive",
+                        fontSize: "2em"
+                    },
+                    "& span.MuiTabs-indicator":{
+                        background:"#FFFF",
+                        height: "3px"
+                    }
+                    
+                    }} value={value} onChange={(e, val) => { setValue(val) }} >
+                    <Tab label="HOME" to='/home' component={Link} />
+                    <Tab label="FILMES" to='/filmes' component={Link} />
+                    <Tab label="SERIES" to='/series' component={Link} />
+                </Tabs>
+                {/* <NavBarItems ref={navElement}>
                     <NavBarItem><Link to="/" className={`nav_link ${path.includes("") ? "active" : undefined}`} onClick={handleClick}>HOME</Link></NavBarItem>
                     <NavBarItem><Link to="/filmes" className={`nav_link ${path.includes("filmes") ? "active" : undefined}`} onClick={handleClick}>FILMES</Link></NavBarItem>
                     <NavBarItem><Link to="/series" className={`nav_link ${path.includes("series") ? "active" : undefined}`} onClick={handleClick}>SERIES</Link></NavBarItem>
                     <Indicator left={indicatorPosition} width={indicatorWidth} />
-                </NavBarItems>
+                </NavBarItems> */}
             </NavBar>
 
             <SeachWrapper method="GET">

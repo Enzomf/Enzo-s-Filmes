@@ -8,7 +8,7 @@ export default function ContentCarrousel({ content }) {
     return (
         content.map((element, index )=> (
             <MidiaSection key={index}>
-                <SectionTitle>{element.slug}</SectionTitle>
+                <SectionTitle>{element.slug} {element.icon}</SectionTitle>
                 <Swiper modules={[Navigation]} navigation={true} slidesPerView={"auto"} className="mySwiper" loop="true" breakpoints={{
                     0: {
                         slidesPerView: 1.15,
