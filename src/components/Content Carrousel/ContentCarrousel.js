@@ -11,36 +11,59 @@ export default function ContentCarrousel({ content }) {
                 <SectionTitle>{element.slug}</SectionTitle>
                 <Swiper modules={[Navigation]} navigation={true} slidesPerView={"auto"} className="mySwiper" loop="true" breakpoints={{
                     0: {
-                        slidesPerView: 1.5,
+                        slidesPerView: 1.15,
                     },
                     350: {
-                        slidesPerView: 1.8
+                        slidesPerView: 1.5
                     },
 
-                    420: {
-                        slidesPerView: 2.3
+                    400: {
+                        slidesPerView: 1.6
                     },
                     460: {
-                        slidesPerView: 2.5
+                        slidesPerView: 2.1
                     },
                     500: {
-                        slidesPerView: 2.8
+                        slidesPerView: 2.3
                     },
                     550: {
-                        slidesPerView: 3.1
+                        slidesPerView: 2.5
                     },
                     600: {
-                        slidesPerView: 3.5
+                        slidesPerView: 2.8
                     },
                     680: {
-                        slidesPerView: 4.1
+                        slidesPerView: 3.3  
                     },
-                    700: {
-                        slidesPerView: 4.5
+                    800: {
+                        slidesPerView: 3.8
                     },
-                    1080: {
-                        slidesPerView: 8.5
+                    900:{
+                        slidesPerView: 4.2
                     }
+                    ,
+
+                    1080: {
+                        slidesPerView: 5.3
+                    },
+                    1300:{
+                        slidesPerView: 5.8
+                    },
+                    1400:{
+                        slidesPerView: 6.2
+                    },
+                    1500:{
+                        slidesPerView: 6.5
+                    },
+                    1600:{
+                        slidesPerView: 6.8
+                    },
+                    1700:{
+                        slidesPerView: 7.5
+                    },
+                    1800:{
+                        slidesPerView: 7.5
+                    },
                 }} >
                     {
                         element.content.results.map(midia => (

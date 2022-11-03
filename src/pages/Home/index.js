@@ -65,7 +65,7 @@ function Home() {
     const homeMidia = useQuery({ queryKey: ["homeMidia"], queryFn: getHomeMidia })
     const carrouselMidia = useQuery({ queryKey: ["mainCarrousel"], queryFn: getMainCarrouselMidia })
 
-    if (homeMidia.isLoading || carrouselMidia.isLoading) return <h1>Loading ....</h1>
+    if (homeMidia.isLoading || carrouselMidia.isLoading) return <h1 style={{color:"red"}}>Loading ....</h1>
 
     return (
         <Container>

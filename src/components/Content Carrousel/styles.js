@@ -5,10 +5,10 @@ import styled from "styled-components"
     margin: 2em 0 2em 0 ;
     `
 const Midiacard = styled.div`
-    width: 150px;
-    height: 200px;
+    width: 200px;
+    height: 250px;
     position: relative;
-  
+
 `
 const MidiaRating = styled.div`
     position: absolute;
@@ -24,8 +24,8 @@ const MidiaRating = styled.div`
     color:#FFFF
 `
     const Image = styled.img`
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 95%;
     `
     const SectionTitle = styled.h1`
         color: #FFFF;
