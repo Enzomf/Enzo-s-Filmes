@@ -16,15 +16,16 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Router>
+      <Router basename='Enzo-s-Filmes'>
         <Header />
         <MainCarrousel />
         <Routes>
           <Route path='/' element={<Navigate to={"/home"} replace />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='/filmes' element={<Filmes />} />
-          <Route path='/series' element={<Series />} />
-          <Route path='/detalhes/:id' element={<Detalhes />} />
+          <Route path='home' element={<Home />} />
+          <Route path='filmes' element={<Filmes />} />
+          <Route path='series' element={<Series />} />
+          <Route path='detalhes/:id' element={<Detalhes />} />
+          <Route path='*' element={<Navigate to="/home" />} />
         </Routes>
       </Router>
     </QueryClientProvider>
