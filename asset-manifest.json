@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/react-teste/home/static/css/main.fe990859.css",
-    "main.js": "/react-teste/home/static/js/main.668e3eae.js",
-    "static/media/logo.svg": "/react-teste/home/static/media/logo.c44b05dc7e4c2818ce4b74b39238aa31.svg",
-    "index.html": "/react-teste/home/index.html",
-    "main.fe990859.css.map": "/react-teste/home/static/css/main.fe990859.css.map",
-    "main.668e3eae.js.map": "/react-teste/home/static/js/main.668e3eae.js.map"
+    "main.css": "/Enzo-s-Filmes/static/css/main.fe990859.css",
+    "main.js": "/Enzo-s-Filmes/static/js/main.598476ee.js",
+    "static/media/logo.svg": "/Enzo-s-Filmes/static/media/logo.c44b05dc7e4c2818ce4b74b39238aa31.svg",
+    "index.html": "/Enzo-s-Filmes/index.html",
+    "main.fe990859.css.map": "/Enzo-s-Filmes/static/css/main.fe990859.css.map",
+    "main.598476ee.js.map": "/Enzo-s-Filmes/static/js/main.598476ee.js.map"
   },
   "entrypoints": [
     "static/css/main.fe990859.css",
-    "static/js/main.668e3eae.js"
+    "static/js/main.598476ee.js"
   ]
 }
