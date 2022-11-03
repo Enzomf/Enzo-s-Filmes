@@ -12,7 +12,7 @@ export default function Header() {
 
     const [indicatorPosition, setIndicatorPosition] = useState();
     const [indicatorWidth, setIndicatorWidth] = useState();
-
+    console.log(indicatorPosition, indicatorWidth)
     const navElement = useRef();
 
     function handleClick(e) {
@@ -32,9 +32,7 @@ export default function Header() {
         e.target.classList.add("active")
 
     }
-
-
-
+    
     return (
         <HeaderC>
             <a href={"/"}>
