@@ -9,7 +9,8 @@ import { Tab, Tabs } from "@mui/material"
 export default function Header() {
 
     const path = window.location.pathname
-    const [value, setValue] = useState(path === "/home" ? 0 : path === "/filmes" ? 1 : path === "/series" ? 2 : 0)
+    const [value, setValue] = useState(path === "/home" ? 0 : path === "/filmes" ? 1 : path === "/series" ? 2 : path.includes("detalhes")? undefined : 0)
+
     return (
         <HeaderC>
             <a href={"/"}>

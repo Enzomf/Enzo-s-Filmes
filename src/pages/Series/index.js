@@ -57,6 +57,7 @@ function Series() {
             {
                 slug: "Em Alta",
                 icon: <AiFillFire />,
+                type:"tv",
                 content: await ((await fetch(`https://api.themoviedb.org/3/tv/popular?api_key=4db00bcf6b586a0afd9fb29afa56fa26&language=en-US&page=2`)).json())
             },
             {

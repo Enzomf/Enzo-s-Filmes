@@ -3,6 +3,7 @@ import { useQuery } from "react-query"
 import { EffectCoverflow, Autoplay, } from "swiper"
 import { CarrouselContainer, Image } from "./styles"
 import MainCarrouselSkelet from "../Carrousel Skeleton/mainCarrouselSkeleton"
+import { Link } from "react-router-dom"
 
 
 
@@ -61,9 +62,9 @@ export default function MainCarrousel() {
                 {data &&
                     data.results.map((content) => (
                         <SwiperSlide key={content.id}>
-                            <a href={content.media_type === "tv" ? `/detalhes/${content.id}?type="tv"` : `/detalhes/${content.id}?type="movie"`}>
+                            <Link to={content.media_type === "tv" ? `/detalhes/${content.id}?type="tv"` : `/detalhes/${content.id}?type="movie"`}>
                                 <Image alt={content.orginal_name || content.title || content.name} src={`https://image.tmdb.org/t/p/original/${content.backdrop_path}`} />
-                            </a>
+                            </Link>
                         </SwiperSlide>
                     ))
                 }

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { Navigation } from "swiper"
 import { SwiperSlide, Swiper } from "swiper/react"
 
@@ -70,10 +71,10 @@ export default function ContentCarrousel({ content }) {
                             <SwiperSlide key={midia.id}>
 
                                 <Midiacard>
-                                    <a href={`/detalhes/${midia.id}?type="${element.type || midia.media_type}"`}>
+                                    <Link to={`/detalhes/${midia.id}?type="${element.type || midia.media_type}"`}>
                                         <Image src={`https://image.tmdb.org/t/p/original/${midia.poster_path}`} />
                                         <MidiaRating> {midia.vote_average.toFixed(1)}</MidiaRating>
-                                    </a>
+                                    </Link>
                                 </Midiacard>
                             </SwiperSlide>
                         ))

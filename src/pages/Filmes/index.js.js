@@ -57,6 +57,7 @@ function Filmes() {
             {
                 slug: "Em Alta",
                 icon: <AiFillFire />,
+                type: "movie",
                 content: await ((await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=4db00bcf6b586a0afd9fb29afa56fa26&language=en-US&page=1`)).json())
             },
             {

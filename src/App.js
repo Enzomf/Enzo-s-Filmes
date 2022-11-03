@@ -4,7 +4,8 @@ import Home from "./pages/Home/index"
 import Filmes from './pages/Filmes/index.js';
 import Header from './components/Header/Header';
 import Series from './pages/Series/index'
-import MainCarrousel from './components/Main Carrousel/MainCarrousel'; 
+import Detalhes from "./pages/detalhes/index"
+import MainCarrousel from './components/Main Carrousel/MainCarrousel';
 
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/filmes' element={<Filmes />} />
           <Route path='/series' element={<Series />} />
+          <Route path='/detalhes/:id' element={<Detalhes />} />
         </Routes>
       </Router>
     </QueryClientProvider>
