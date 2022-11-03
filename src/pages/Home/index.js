@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useQuery } from 'react-query';
 
 import MainCarrousel from '../../components/Main Carrousel/MainCarrousel';
 import ContentCarrousel from '../../components/Content Carrousel/ContentCarrousel';
@@ -8,8 +8,6 @@ import Container from '../../components/Container/Container';
 
 function Home() {
 
-    const [homeMidia, setHomeMidia] = useState([])
-    const [carrouselMidia, setCarrouselMidia] = useState()
     async function getHomeMidia() {
         let response = [
             {
@@ -48,7 +46,8 @@ function Home() {
             },
         ]
 
-        setHomeMidia(response)
+        return response
+        // setHomeMidia(response)
     }
 
     async function getMainCarrouselMidia() {
@@ -58,21 +57,20 @@ function Home() {
             randomPage = Math.floor(Math.random() * 2)
         } while (randomPage === 0)
 
-        fetch(`https://api.themoviedb.org/4/list/8212499?page=${randomPage}&api_key=4db00bcf6b586a0afd9fb29afa56fa26&language=pt-BR`).then(response => response.json()).then(data => {
-            setCarrouselMidia(data)
-        })
-
+        const response = fetch(`https://api.themoviedb.org/4/list/8212499?page=1&api_key=4db00bcf6b586a0afd9fb29afa56fa26&language=pt-BR`)
+        
+        return (await response).json()
     }
 
-    useEffect(() => {
-        getHomeMidia()
-        getMainCarrouselMidia()
-    }, [])
+    const homeMidia = useQuery({ queryKey: ["homeMidia"], queryFn: getHomeMidia })
+    const carrouselMidia = useQuery({ queryKey: ["mainCarrousel"], queryFn: getMainCarrouselMidia })
+
+    if (homeMidia.isLoading || carrouselMidia.isLoading) return <h1>Loading ....</h1>
 
     return (
         <Container>
-           {carrouselMidia && <MainCarrousel midia={carrouselMidia.results} />}
-           {homeMidia && <ContentCarrousel content={homeMidia} />}
+            {carrouselMidia.data && <MainCarrousel midia={carrouselMidia.data.results} />}
+            {homeMidia.data && <ContentCarrousel content={homeMidia.data} />}
         </Container>
     );
 }

@@ -37,12 +37,12 @@ export default function Header() {
 
     return (
         <HeaderC>
-            <a href={"/home"}>
+            <a href={"/"}>
                 <img src={logo} alt="logo" width="55" />
             </a>
             <NavBar>
                 <NavBarItems ref={navElement}>
-                    <NavBarItem><Link to="/home" className={`nav_link ${path.includes("home") ? "active" : undefined}`} onClick={handleClick}>HOME</Link></NavBarItem>
+                    <NavBarItem><Link to="/" className={`nav_link ${path.includes("") ? "active" : undefined}`} onClick={handleClick}>HOME</Link></NavBarItem>
                     <NavBarItem><Link to="/filmes" className={`nav_link ${path.includes("filmes") ? "active" : undefined}`} onClick={handleClick}>FILMES</Link></NavBarItem>
                     <NavBarItem><Link to="/series" className={`nav_link ${path.includes("series") ? "active" : undefined}`} onClick={handleClick}>SERIES</Link></NavBarItem>
                     <Indicator left={indicatorPosition} width={indicatorWidth} />
