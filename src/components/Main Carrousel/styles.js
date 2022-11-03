@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
  const CarrouselContainer = styled.div`
-
+    padding: 0 1.5em;
 
    
 `

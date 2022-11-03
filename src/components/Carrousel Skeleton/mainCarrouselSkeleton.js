@@ -39,7 +39,7 @@ function MainCarrouselSkelet({midia}) {
             {
                 midia.map((_, index) => (
                     <SwiperSlide key={index}>
-                        <Skeleton variant="rounded" sx={{ background: "#474A51", width: "1000px", height: "1000px" }} />
+                        <Skeleton variant="rounded" sx={{ background: "#474A51", width: "100%", height: "100%" }} />
                     </SwiperSlide>
                 ))
             }

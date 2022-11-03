@@ -1,20 +1,4 @@
-import { useQuery } from 'react-query';
-
-
-import ContentCarrousel from '../../components/Content Carrousel/ContentCarrousel';
-import Container from '../../components/Container/Container';
-import CarrouselSkeleton from '../../components/Carrousel Skeleton/carroulselSkeleton';
-
-import { AiFillFire } from "react-icons/ai"
-import { MdOutlineRecommend } from "react-icons/md"
-import { GiPistolGun, GiTightrope } from "react-icons/gi"
-import { RiKnifeBloodFill } from "react-icons/ri"
-import { BiLaugh } from "react-icons/bi"
-import { FiBookOpen } from "react-icons/fi"
-
-
-function Home() {
-
+function Series(){
     const SkeletonData = [
         {
             slug: "Em Alta",
@@ -70,7 +54,7 @@ function Home() {
             {
                 slug: "Ação",
                 icon: <GiPistolGun />,
-                type: "movie",
+                type: "tv",
                 content: await (await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=4db00bcf6b586a0afd9fb29afa56fa26&page=1&with_genres=28`)).json()
             },
             {
@@ -82,7 +66,7 @@ function Home() {
             {
                 slug: "Terror",
                 icon: <RiKnifeBloodFill />,
-                type: "movie",
+                type: "tv",
                 content: await (await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=4db00bcf6b586a0afd9fb29afa56fa26&page=1&with_genres=27`)).json()
             },
             {
@@ -94,31 +78,23 @@ function Home() {
             {
                 slug: "Documentários",
                 icon: <FiBookOpen />,
-                type: "movie",
+                type: "tv",
                 content: await (await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=4db00bcf6b586a0afd9fb29afa56fa26&page=1&with_genres=99`)).json()
             },
         ]
 
         return response
-        // setHomeMidia(response)
     }
 
 
 
     const homeMidia = useQuery({ queryKey: ["homeMidia"], queryFn: getHomeMidia, refetchOnWindowFocus: false })
 
+    return(
 
-    if (homeMidia.isLoading) return (
-        <Container>
-            <CarrouselSkeleton content={SkeletonData} />
-        </Container>
+
     )
-
-    return (
-        <Container>
-            {homeMidia.data && <ContentCarrousel content={homeMidia.data} />}
-        </Container>
-    );
 }
 
-export default Home;
+
+return Series
