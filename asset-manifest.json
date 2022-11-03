@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Enzo-s-Filmes/static/css/main.fe990859.css",
-    "main.js": "/Enzo-s-Filmes/static/js/main.f97c8f51.js",
+    "main.js": "/Enzo-s-Filmes/static/js/main.34b7b121.js",
     "static/media/logo.svg": "/Enzo-s-Filmes/static/media/logo.c44b05dc7e4c2818ce4b74b39238aa31.svg",
     "index.html": "/Enzo-s-Filmes/index.html",
     "main.fe990859.css.map": "/Enzo-s-Filmes/static/css/main.fe990859.css.map",
-    "main.f97c8f51.js.map": "/Enzo-s-Filmes/static/js/main.f97c8f51.js.map"
+    "main.34b7b121.js.map": "/Enzo-s-Filmes/static/js/main.34b7b121.js.map"
   },
   "entrypoints": [
     "static/css/main.fe990859.css",
-    "static/js/main.f97c8f51.js"
+    "static/js/main.34b7b121.js"
   ]
 }
