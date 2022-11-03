@@ -14,7 +14,7 @@ export default function MainCarrousel() {
             randomPage = Math.floor(Math.random() * 2)
         } while (randomPage === 0)
 
-        const response = fetch(`https://api.themoviedb.org/4/list/8212499?page=1&api_key=4db00bcf6b586a0afd9fb29afa56fa26&language=pt-BR`)
+        const response = fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=4db00bcf6b586a0afd9fb29afa56fa26&language=en-US&page=1`)
 
         return (await response).json()
     }

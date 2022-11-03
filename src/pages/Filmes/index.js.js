@@ -6,7 +6,7 @@ import Container from '../../components/Container/Container';
 import CarrouselSkeleton from '../../components/Carrousel Skeleton/carroulselSkeleton';
 import { AiFillFire } from "react-icons/ai"
 import { MdOutlineRecommend } from "react-icons/md"
-import { GiGingerbreadMan, GiTightrope } from "react-icons/gi"
+import { GiGingerbreadMan, GiTightrope, GiTomato } from "react-icons/gi"
 import { RiKnifeBloodFill } from "react-icons/ri"
 import { BiLaugh, BiMoviePlay } from "react-icons/bi"
 
@@ -52,8 +52,7 @@ function Filmes() {
     ]
 
 
-
-    async function getFilmesMidia() {
+    async function getFilmes() {
         let response = [
             {
                 slug: "Em Alta",
@@ -66,6 +65,13 @@ function Filmes() {
                 type: "movie",
                 content: await (await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=4db00bcf6b586a0afd9fb29afa56fa26&language=en-US&sort_by=popularity.desc&page=2`)).json()
             },
+            {
+                slug: "Melhor Avaliados",
+                icon: <GiTomato />,
+                type: "movie",
+                content: await (await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=4db00bcf6b586a0afd9fb29afa56fa26&language=en-US&page=1`)).json()
+            }
+            ,
             {
                 slug: "No ar",
                 icon: <BiMoviePlay />,
@@ -104,15 +110,18 @@ function Filmes() {
 
 
 
-    const homeMidia = useQuery({ queryKey: ["filmesMidia"], queryFn: getFilmesMidia, refetchOnWindowFocus: false })
+    const filmes = useQuery({ queryKey: ["filmes"], queryFn: getFilmes, refetchOnWindowFocus: false })
 
-    if (homeMidia.isLoading) return (
-        <CarrouselSkeleton content={SkeletonData} />
+    if (filmes.isLoading) return (
+        <Container>
+
+            <CarrouselSkeleton content={SkeletonData} />
+        </Container>
     )
 
     return (
         <Container>
-            {homeMidia.data && <ContentCarrousel content={homeMidia.data} />}
+            {filmes.data && <ContentCarrousel content={filmes.data} />}
         </Container>
     )
 }
