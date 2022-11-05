@@ -23,5 +23,18 @@ a {
   .swiper-button-prev::after {
     display: none;
   }
+  .navbarPc{
+    display: none;
+  }
+
 }
+@media (min-width: 801px) {
+  .navBarC {
+    display: none;
+  }
+
+}
+
+
+
 
