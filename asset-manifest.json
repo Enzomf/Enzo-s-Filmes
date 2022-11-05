@@ -1,14 +1,28 @@
 {
   "files": {
-    "main.css": "/Enzo-s-Filmes/static/css/main.fe990859.css",
-    "main.js": "/Enzo-s-Filmes/static/js/main.34b7b121.js",
-    "static/media/logo.svg": "/Enzo-s-Filmes/static/media/logo.c44b05dc7e4c2818ce4b74b39238aa31.svg",
+    "main.css": "/Enzo-s-Filmes/static/css/main.486ef843.css",
+    "main.js": "/Enzo-s-Filmes/static/js/main.ee525c9b.js",
+    "static/js/668.9ed11226.chunk.js": "/Enzo-s-Filmes/static/js/668.9ed11226.chunk.js",
+    "static/js/745.aaf88e3f.chunk.js": "/Enzo-s-Filmes/static/js/745.aaf88e3f.chunk.js",
+    "static/js/264.27f5c737.chunk.js": "/Enzo-s-Filmes/static/js/264.27f5c737.chunk.js",
+    "static/js/21.04ce9d0e.chunk.js": "/Enzo-s-Filmes/static/js/21.04ce9d0e.chunk.js",
+    "static/js/582.1464796c.chunk.js": "/Enzo-s-Filmes/static/js/582.1464796c.chunk.js",
+    "static/js/425.9ffe0930.chunk.js": "/Enzo-s-Filmes/static/js/425.9ffe0930.chunk.js",
+    "static/js/853.e0ff7056.chunk.js": "/Enzo-s-Filmes/static/js/853.e0ff7056.chunk.js",
+    "static/media/logo.svg": "/Enzo-s-Filmes/static/media/logo.dff1fbc756a1f031190dd830717abe43.svg",
     "index.html": "/Enzo-s-Filmes/index.html",
-    "main.fe990859.css.map": "/Enzo-s-Filmes/static/css/main.fe990859.css.map",
-    "main.34b7b121.js.map": "/Enzo-s-Filmes/static/js/main.34b7b121.js.map"
+    "main.486ef843.css.map": "/Enzo-s-Filmes/static/css/main.486ef843.css.map",
+    "main.ee525c9b.js.map": "/Enzo-s-Filmes/static/js/main.ee525c9b.js.map",
+    "668.9ed11226.chunk.js.map": "/Enzo-s-Filmes/static/js/668.9ed11226.chunk.js.map",
+    "745.aaf88e3f.chunk.js.map": "/Enzo-s-Filmes/static/js/745.aaf88e3f.chunk.js.map",
+    "264.27f5c737.chunk.js.map": "/Enzo-s-Filmes/static/js/264.27f5c737.chunk.js.map",
+    "21.04ce9d0e.chunk.js.map": "/Enzo-s-Filmes/static/js/21.04ce9d0e.chunk.js.map",
+    "582.1464796c.chunk.js.map": "/Enzo-s-Filmes/static/js/582.1464796c.chunk.js.map",
+    "425.9ffe0930.chunk.js.map": "/Enzo-s-Filmes/static/js/425.9ffe0930.chunk.js.map",
+    "853.e0ff7056.chunk.js.map": "/Enzo-s-Filmes/static/js/853.e0ff7056.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fe990859.css",
-    "static/js/main.34b7b121.js"
+    "static/css/main.486ef843.css",
+    "static/js/main.ee525c9b.js"
   ]
 }
