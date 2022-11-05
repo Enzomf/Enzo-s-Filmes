@@ -140,25 +140,25 @@ function Filmes() {
       {filmes.data && (
         <>
           <ContentCarrousel content={filmes.data[0]} />
-          <LazyLoad offset={0.8}>
-            <ContentCarrousel content={filmes.data[1]} />
-          </LazyLoad>
-          <LazyLoad offset={0.8}>
+
+          <ContentCarrousel content={filmes.data[1]} />
+
+          <LazyLoad offset={0.80}>
             <ContentCarrousel content={filmes.data[2]} />
           </LazyLoad>
-          <LazyLoad offset={0.8}>
+          <LazyLoad offset={0.80}>
             <ContentCarrousel content={filmes.data[3]} />
           </LazyLoad>
-          <LazyLoad offset={0.8}>
+          <LazyLoad offset={0.80}>
             <ContentCarrousel content={filmes.data[4]} />
           </LazyLoad>
-          <LazyLoad offset={0.8}>
+          <LazyLoad offset={0.80}>
             <ContentCarrousel content={filmes.data[5]} />
           </LazyLoad>
-          <LazyLoad offset={0.8}>
+          <LazyLoad offset={0.80}>
             <ContentCarrousel content={filmes.data[6]} />
           </LazyLoad>
-          <LazyLoad offset={0.8}>
+          <LazyLoad offset={0.80}>
             <ContentCarrousel content={filmes.data[7]} />
           </LazyLoad>
         </>
