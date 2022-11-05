@@ -1,13 +1,15 @@
 import { NavBarC } from "./styles";
-import { Link, useLocation} from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Tab, Tabs } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function NavBar() {
-    const location = useLocation()
-    const path = location.pathname
+  const location = useLocation();
+  const path = location.pathname;
 
-    const [value, setValue] = useState(path.includes("home")? 0 : path.includes("filmes")?1:2) 
+  const [value, setValue] = useState(
+    path.includes("home") ? 0 : path.includes("filmes") ? 1 : path.includes("series")?2:0
+  );
 
   return (
     <NavBarC>
