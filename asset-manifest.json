@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Enzo-s-Filmes/static/css/main.486ef843.css",
-    "main.js": "/Enzo-s-Filmes/static/js/main.ee525c9b.js",
+    "main.js": "/Enzo-s-Filmes/static/js/main.0a4ccfa8.js",
     "static/js/668.9ed11226.chunk.js": "/Enzo-s-Filmes/static/js/668.9ed11226.chunk.js",
     "static/js/745.aaf88e3f.chunk.js": "/Enzo-s-Filmes/static/js/745.aaf88e3f.chunk.js",
     "static/js/264.27f5c737.chunk.js": "/Enzo-s-Filmes/static/js/264.27f5c737.chunk.js",
@@ -12,7 +12,7 @@
     "static/media/logo.svg": "/Enzo-s-Filmes/static/media/logo.dff1fbc756a1f031190dd830717abe43.svg",
     "index.html": "/Enzo-s-Filmes/index.html",
     "main.486ef843.css.map": "/Enzo-s-Filmes/static/css/main.486ef843.css.map",
-    "main.ee525c9b.js.map": "/Enzo-s-Filmes/static/js/main.ee525c9b.js.map",
+    "main.0a4ccfa8.js.map": "/Enzo-s-Filmes/static/js/main.0a4ccfa8.js.map",
     "668.9ed11226.chunk.js.map": "/Enzo-s-Filmes/static/js/668.9ed11226.chunk.js.map",
     "745.aaf88e3f.chunk.js.map": "/Enzo-s-Filmes/static/js/745.aaf88e3f.chunk.js.map",
     "264.27f5c737.chunk.js.map": "/Enzo-s-Filmes/static/js/264.27f5c737.chunk.js.map",
@@ -23,6 +23,6 @@
   },
   "entrypoints": [
     "static/css/main.486ef843.css",
-    "static/js/main.ee525c9b.js"
+    "static/js/main.0a4ccfa8.js"
   ]
 }
