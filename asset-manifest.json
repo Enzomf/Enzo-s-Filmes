@@ -1,28 +1,28 @@
 {
   "files": {
     "main.css": "/Enzo-s-Filmes/static/css/main.486ef843.css",
-    "main.js": "/Enzo-s-Filmes/static/js/main.15deb745.js",
-    "static/js/668.9ed11226.chunk.js": "/Enzo-s-Filmes/static/js/668.9ed11226.chunk.js",
-    "static/js/745.aaf88e3f.chunk.js": "/Enzo-s-Filmes/static/js/745.aaf88e3f.chunk.js",
-    "static/js/264.ab545bea.chunk.js": "/Enzo-s-Filmes/static/js/264.ab545bea.chunk.js",
+    "main.js": "/Enzo-s-Filmes/static/js/main.c479396e.js",
+    "static/js/668.c25f5087.chunk.js": "/Enzo-s-Filmes/static/js/668.c25f5087.chunk.js",
+    "static/js/745.ec9d53ce.chunk.js": "/Enzo-s-Filmes/static/js/745.ec9d53ce.chunk.js",
+    "static/js/264.2a2c6390.chunk.js": "/Enzo-s-Filmes/static/js/264.2a2c6390.chunk.js",
     "static/js/21.04ce9d0e.chunk.js": "/Enzo-s-Filmes/static/js/21.04ce9d0e.chunk.js",
-    "static/js/582.1464796c.chunk.js": "/Enzo-s-Filmes/static/js/582.1464796c.chunk.js",
+    "static/js/290.7b1cbbfc.chunk.js": "/Enzo-s-Filmes/static/js/290.7b1cbbfc.chunk.js",
     "static/js/425.9ffe0930.chunk.js": "/Enzo-s-Filmes/static/js/425.9ffe0930.chunk.js",
     "static/js/853.e0ff7056.chunk.js": "/Enzo-s-Filmes/static/js/853.e0ff7056.chunk.js",
-    "static/media/logo.svg": "/Enzo-s-Filmes/static/media/logo.dff1fbc756a1f031190dd830717abe43.svg",
+    "static/media/logo.svg": "/Enzo-s-Filmes/static/media/logo.c44b05dc7e4c2818ce4b74b39238aa31.svg",
     "index.html": "/Enzo-s-Filmes/index.html",
     "main.486ef843.css.map": "/Enzo-s-Filmes/static/css/main.486ef843.css.map",
-    "main.15deb745.js.map": "/Enzo-s-Filmes/static/js/main.15deb745.js.map",
-    "668.9ed11226.chunk.js.map": "/Enzo-s-Filmes/static/js/668.9ed11226.chunk.js.map",
-    "745.aaf88e3f.chunk.js.map": "/Enzo-s-Filmes/static/js/745.aaf88e3f.chunk.js.map",
-    "264.ab545bea.chunk.js.map": "/Enzo-s-Filmes/static/js/264.ab545bea.chunk.js.map",
+    "main.c479396e.js.map": "/Enzo-s-Filmes/static/js/main.c479396e.js.map",
+    "668.c25f5087.chunk.js.map": "/Enzo-s-Filmes/static/js/668.c25f5087.chunk.js.map",
+    "745.ec9d53ce.chunk.js.map": "/Enzo-s-Filmes/static/js/745.ec9d53ce.chunk.js.map",
+    "264.2a2c6390.chunk.js.map": "/Enzo-s-Filmes/static/js/264.2a2c6390.chunk.js.map",
     "21.04ce9d0e.chunk.js.map": "/Enzo-s-Filmes/static/js/21.04ce9d0e.chunk.js.map",
-    "582.1464796c.chunk.js.map": "/Enzo-s-Filmes/static/js/582.1464796c.chunk.js.map",
+    "290.7b1cbbfc.chunk.js.map": "/Enzo-s-Filmes/static/js/290.7b1cbbfc.chunk.js.map",
     "425.9ffe0930.chunk.js.map": "/Enzo-s-Filmes/static/js/425.9ffe0930.chunk.js.map",
     "853.e0ff7056.chunk.js.map": "/Enzo-s-Filmes/static/js/853.e0ff7056.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.486ef843.css",
-    "static/js/main.15deb745.js"
+    "static/js/main.c479396e.js"
   ]
 }
