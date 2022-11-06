@@ -14,11 +14,14 @@ const queryClient = new QueryClient();
 
 function App() {
 
+  const path = window.location.pathname
+
   return (
     <QueryClientProvider client={queryClient}>
+
       <Router basename='Enzo-s-Filmes'>
         <Header />
-        <MainCarrousel />
+        {<MainCarrousel />}
         <Routes>
           <Route path='/' element={<Navigate to={"/home"} replace />} />
           <Route path='home' element={<Home />} />
