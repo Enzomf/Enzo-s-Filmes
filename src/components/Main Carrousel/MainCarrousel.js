@@ -1,10 +1,10 @@
-import { Swiper, SwiperSlide } from "swiper/react";
 import { useQuery } from "react-query";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Autoplay } from "swiper";
-import { CarrouselContainer, Image } from "./styles";
-import MainCarrouselSkelet from "../Carrousel Skeleton/mainCarrouselSkeleton";
 import { Link } from "react-router-dom";
-import LazyLoad from "react-lazy-load";
+
+import { CarrouselContainer, Image } from "./styles";
+import axios_ from "../../axiosConfig";
 
 export default function MainCarrousel() {
   async function getMainCarrouselMidia() {
@@ -14,20 +14,18 @@ export default function MainCarrousel() {
       randomPage = Math.floor(Math.random() * 2);
     } while (randomPage === 0);
 
-    const response = fetch(
-      `https://api.themoviedb.org/3/trending/all/day?api_key=4db00bcf6b586a0afd9fb29afa56fa26&language=en-US&page=1`
-    );
+    const response = await (await axios_.get("/trending/all/day?page=1")).data
 
-    return (await response).json();
+    return response
   }
 
-  const { data, isLoading } = useQuery({
+  const { data } = useQuery({
     queryKey: ["mainCarrousel"],
     queryFn: getMainCarrouselMidia,
     refetchOnWindowFocus: false,
   });
 
-  const SkeletonData = ["", "", "", ""];
+
 
   return (
     <CarrouselContainer>

@@ -1,7 +1,10 @@
-import { Midiacard, MidiaSection, SectionTitle } from "../Content Carrousel/styles"
 import { Navigation } from "swiper"
-import { SwiperSlide, Swiper } from "swiper/react"
+import LazyLoad from "react-lazy-load"
 import { Skeleton } from "@mui/material"
+import { SwiperSlide, Swiper } from "swiper/react"
+
+import { Midiacard, MidiaSection, SectionTitle } from "../Content Carrousel/styles"
+
 
 
 function CarrouselSkeleton({ content }) {
@@ -70,7 +73,7 @@ function CarrouselSkeleton({ content }) {
                         section.content.map((_, index) => (
                             <SwiperSlide key={index}>
                                 <Midiacard>
-                                    <Skeleton variant="rounded" sx={{ background: "#1C1C1C", width: "200px", height:"250px" }} />
+                                    <Skeleton variant="rounded" sx={{ background: "#1C1C1C", width: "200px", height: "250px" }} />
                                 </Midiacard>
                             </SwiperSlide>
                         ))

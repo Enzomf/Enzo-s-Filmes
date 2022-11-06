@@ -1,15 +1,16 @@
+import React from "react";
 import { useQuery } from "react-query";
-
-import ContentCarrousel from "../../components/Content Carrousel/ContentCarrousel";
-import Container from "../../components/Container/Container";
-import CarrouselSkeleton from "../../components/Carrousel Skeleton/carroulselSkeleton";
-import React, { memo } from "react";
-import { AiFillFire } from "react-icons/ai";
-import { MdOutlineRecommend } from "react-icons/md";
-import { GiGingerbreadMan, GiTightrope, GiTomato } from "react-icons/gi";
-import { RiKnifeBloodFill } from "react-icons/ri";
-import { BiLaugh, BiMoviePlay } from "react-icons/bi";
 import LazyLoad from "react-lazy-load";
+import { AiFillFire } from "react-icons/ai";
+import { RiKnifeBloodFill } from "react-icons/ri";
+import { MdOutlineRecommend } from "react-icons/md";
+import { BiLaugh, BiMoviePlay } from "react-icons/bi";
+import { GiGingerbreadMan, GiTightrope, GiTomato } from "react-icons/gi";
+
+import axios_ from "../../axiosConfig";
+import Container from "../../components/Container/Container";
+import ContentCarrousel from "../../components/Content Carrousel/ContentCarrousel";
+import CarrouselSkeleton from "../../components/Carrousel Skeleton/carroulselSkeleton";
 
 function Filmes() {
   const SkeletonData = [
@@ -40,81 +41,49 @@ function Filmes() {
         slug: "Em Alta",
         icon: <AiFillFire />,
         type: "movie",
-        content: await (
-          await fetch(
-            `https://api.themoviedb.org/3/movie/popular?api_key=4db00bcf6b586a0afd9fb29afa56fa26&language=en-US&page=1`
-          )
-        ).json(),
+        content: await (await axios_.get("/movie/popular?")).data
       },
       {
         slug: "Recomendados",
         icon: <MdOutlineRecommend />,
         type: "movie",
-        content: await (
-          await fetch(
-            `https://api.themoviedb.org/3/discover/movie?api_key=4db00bcf6b586a0afd9fb29afa56fa26&language=en-US&sort_by=popularity.desc&page=2`
-          )
-        ).json(),
+        content: await (await axios_.get("/discover/movie?sort_by=popularity.desc&page=2")).data
       },
       {
         slug: "Melhor Avaliados",
         icon: <GiTomato />,
         type: "movie",
-        content: await (
-          await fetch(
-            `https://api.themoviedb.org/3/movie/top_rated?api_key=4db00bcf6b586a0afd9fb29afa56fa26&language=en-US&page=1`
-          )
-        ).json(),
+        content: await (await axios_.get("/movie/top_rated?page=1")).data
       },
       {
         slug: "No ar",
         icon: <BiMoviePlay />,
         type: "movie",
-        content: await (
-          await fetch(
-            `https://api.themoviedb.org/3/movie/now_playing?api_key=4db00bcf6b586a0afd9fb29afa56fa26&language=en-US&page=1`
-          )
-        ).json(),
+        content: await (await axios_.get("/movie/now_playing?page=1")).data
       },
       {
         slug: "Aventura",
         icon: <GiTightrope />,
         type: "movie",
-        content: await (
-          await fetch(
-            `https://api.themoviedb.org/3/discover/movie?api_key=4db00bcf6b586a0afd9fb29afa56fa26&page=1&with_genres=12`
-          )
-        ).json(),
+        content: await (await axios_.get("/discover/movie?with_genres=12")).data
       },
       {
         slug: "Terror",
         icon: <RiKnifeBloodFill />,
         type: "movie",
-        content: await (
-          await fetch(
-            `https://api.themoviedb.org/3/discover/movie?api_key=4db00bcf6b586a0afd9fb29afa56fa26&page=2&with_genres=27`
-          )
-        ).json(),
+        content: await (await axios_.get("/discover/movie?with_genres=27")).data
       },
       {
         slug: "Comédia",
         type: "movie",
         icon: <BiLaugh />,
-        content: await (
-          await fetch(
-            `https://api.themoviedb.org/3/discover/movie?api_key=4db00bcf6b586a0afd9fb29afa56fa26&page=2&with_genres=35`
-          )
-        ).json(),
+        content: await (await axios_.get("/discover/movie?with_genres=35&page=2")).data
       },
       {
         slug: "Animação",
         icon: <GiGingerbreadMan />,
         type: "movie",
-        content: await (
-          await fetch(
-            `https://api.themoviedb.org/3/discover/movie?api_key=4db00bcf6b586a0afd9fb29afa56fa26&page=1&with_genres=16`
-          )
-        ).json(),
+        content: await (await axios_.get("/discover/movie?with_genres=35&page=16")).data
       },
     ];
 

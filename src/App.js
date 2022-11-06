@@ -7,13 +7,12 @@ import {
 } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 
-// import Home from "./pages/Home/index"
-// import Filmes from "./pages/Filmes/index.js";
-import Header from "./components/Header/Header";
-// import Series from "./pages/Series/index";
 
-import MainCarrousel from "./components/Main Carrousel/MainCarrousel";
+import Header from "./components/Header/Header";
+
+
 import NavBar from "./components/NavBar/Navbar";
+import MainCarrousel from "./components/Main Carrousel/MainCarrousel";
 const Home = lazy(() => import("./pages/Home/index"));
 const Series = lazy(() => import("./pages/Series/index"));
 const Filmes = lazy(() => import("./pages/Filmes/index.js"));
