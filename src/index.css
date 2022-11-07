@@ -44,4 +44,15 @@ a {
 }
 
 
+h2{
+  color: #FFFF;
+}
+
+.pagination{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2em 0 ;
+}
+
 

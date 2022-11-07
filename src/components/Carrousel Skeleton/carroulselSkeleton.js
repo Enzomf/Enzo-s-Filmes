@@ -1,9 +1,9 @@
 import { Navigation } from "swiper"
-import LazyLoad from "react-lazy-load"
 import { Skeleton } from "@mui/material"
 import { SwiperSlide, Swiper } from "swiper/react"
 
-import { Midiacard, MidiaSection, SectionTitle } from "../Content Carrousel/styles"
+import { Midiacard, MediaSection, SectionTitle } from "../Content Carrousel/styles"
+import { MediaCardC } from "../Media Card/styles"
 
 
 
@@ -11,9 +11,9 @@ function CarrouselSkeleton({ content }) {
     return (
         content.map((section, index) => (
 
-            <MidiaSection key={index}>
+            <MediaSection key={index}>
                 <SectionTitle>{section.slug}</SectionTitle>
-                <Swiper modules={[Navigation]} navigation={true} slidesPerView={"auto"} className="mySwiper" loop="true" breakpoints={{
+                <Swiper modules={[Navigation]} navigation={true} slidesPerView={"auto"} className="mySwiper" loop="true" spaceBetween={30} breakpoints={{
                     0: {
                         slidesPerView: 1.15,
                     },
@@ -72,15 +72,15 @@ function CarrouselSkeleton({ content }) {
                     {
                         section.content.map((_, index) => (
                             <SwiperSlide key={index}>
-                                <Midiacard>
+                                <MediaCardC>
                                     <Skeleton variant="rounded" sx={{ background: "#1C1C1C", width: "200px", height: "250px" }} />
-                                </Midiacard>
+                                </MediaCardC>
                             </SwiperSlide>
                         ))
 
                     }
                 </Swiper>
-            </MidiaSection>
+            </MediaSection>
 
 
         ))

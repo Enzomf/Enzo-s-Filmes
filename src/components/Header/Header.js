@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
+
 import { TextField } from "@mui/material";
 import { FiSearch } from "react-icons/fi"
 
@@ -11,7 +12,14 @@ import { HeaderC, SeachWrapper, } from "./styles";
 
 
 function Header() {
+  const inputS = useRef(null)
+  const navigate = useNavigate()
 
+  function handleSubmit(e) {
+    e.preventDefault()
+    navigate(`/search?query=${inputS.current.value}`)
+   
+  }
 
   return (
     <HeaderC>
@@ -25,9 +33,9 @@ function Header() {
         </div>
       </div>
 
-      <SeachWrapper method="GET" target="/search">
+      <SeachWrapper method="GET" onSubmit={handleSubmit}>
         <TextField
-          // placeholder="pesquise filmes ou series"
+          inputRef={inputS}
           name="query"
           variant="filled"
           color="primary"

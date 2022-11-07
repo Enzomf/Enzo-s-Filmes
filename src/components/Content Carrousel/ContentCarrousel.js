@@ -1,20 +1,18 @@
-import { Link } from "react-router-dom";
+
 import { Navigation, Lazy } from "swiper";
 import React, { memo } from "react";
 
 import { SwiperSlide, Swiper } from "swiper/react";
-import LazyLoad from "react-lazy-load";
+
 
 import {
-  Midiacard,
-  Image,
-  MidiaRating,
   SectionTitle,
-  MidiaSection,
+  MediaSection,
 } from "./styles";
+import MediaCard from "../Media Card/MediaCard";
 function ContentCarrousel({ content }) {
   return (
-    <MidiaSection>
+    <MediaSection>
       <SectionTitle>
         {content.slug} {content.icon}
       </SectionTitle>
@@ -89,26 +87,13 @@ function ContentCarrousel({ content }) {
           },
         }}
       >
-        {content.content.results.map((midia) => (
-          <SwiperSlide key={midia.id} className="swiper-lazy">
-            <Midiacard>
-              <Link
-                to={`/detalhes/${midia.id}?type="${
-                  content.type || content.media_type
-                }"`}
-              >
-                <LazyLoad height={250} offset={0.95}>
-                  <Image
-                    src={`https://image.tmdb.org/t/p/w300${midia.poster_path}`}
-                  />
-                </LazyLoad>
-                <MidiaRating> {midia.vote_average.toFixed(1)}</MidiaRating>
-              </Link>
-            </Midiacard>
+        {content.content.results.map((media) => (
+          <SwiperSlide key={media.id} className="swiper-lazy">
+           <MediaCard content={content} media={media} /> 
           </SwiperSlide>
         ))}
       </Swiper>
-    </MidiaSection>
+    </MediaSection>
   );
 }
 

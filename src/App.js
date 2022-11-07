@@ -10,6 +10,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import MainLayout from "./layouts/Main";
 import SecondaryLayout from "./layouts/Secondary";
 import Loader from "./components/Loader/loader"
+import Search from "./pages/Search/Search";
 const Home = lazy(() => import("./pages/Home/index"));
 const Series = lazy(() => import("./pages/Series/index"));
 const Filmes = lazy(() => import("./pages/Filmes/index.js"));
@@ -30,6 +31,7 @@ function App() {
             </Route>
             <Route element={<SecondaryLayout/>}>
               <Route path="detalhes/:id" element={<Detalhes />} />
+              <Route path="search" element={<Search/>}/>
             </Route>
 
             <Route path="*" element={<Navigate to="/home" />} />
