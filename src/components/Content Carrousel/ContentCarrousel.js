@@ -20,9 +20,12 @@ function ContentCarrousel({ content }) {
       </SectionTitle>
       <Swiper
         modules={[Navigation, Lazy]}
+        grabCursor={true}
         navigation={true}
         slidesPerView={"auto"}
         className="mySwiper"
+        spaceBetween={30}
+
         loop="true"
         lazy={true}
         preloadImages={false}
@@ -96,7 +99,7 @@ function ContentCarrousel({ content }) {
               >
                 <LazyLoad height={250} offset={0.95}>
                   <Image
-                    src={`https://image.tmdb.org/t/p/w200${midia.poster_path}`}
+                    src={`https://image.tmdb.org/t/p/w300${midia.poster_path}`}
                   />
                 </LazyLoad>
                 <MidiaRating> {midia.vote_average.toFixed(1)}</MidiaRating>

@@ -76,7 +76,7 @@ function Home() {
         slug: "Aventura",
         icon: <GiTightrope />,
         type: "tv",
-        content: await (await axios_.get("/discover/movie?with_genres=10759")).data
+        content: await (await axios_.get("/discover/movie?with_genres=12")).data
       },
       {
         slug: "Terror",
@@ -97,7 +97,7 @@ function Home() {
         content: await (await axios_.get("/discover/movie?with_genres=99")).data
       },
     ];
-
+    console.log(response)
     return response;
   }
 

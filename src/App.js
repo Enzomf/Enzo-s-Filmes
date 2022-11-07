@@ -7,12 +7,9 @@ import {
 } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 
-
-import Header from "./components/Header/Header";
-
-
-import NavBar from "./components/NavBar/Navbar";
-import MainCarrousel from "./components/Main Carrousel/MainCarrousel";
+import MainLayout from "./layouts/Main";
+import SecondaryLayout from "./layouts/Secondary";
+import Loader from "./components/Loader/loader"
 const Home = lazy(() => import("./pages/Home/index"));
 const Series = lazy(() => import("./pages/Series/index"));
 const Filmes = lazy(() => import("./pages/Filmes/index.js"));
@@ -24,20 +21,17 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <Router basename="Enzo-s-Filmes">
-        <Header />
-        <MainCarrousel />
-        <div className="navBarC">
-
-        <NavBar/>
-        </div>
-
-        <Suspense fallback={<h1>Loafing</h1>}>
+        <Suspense fallback={<Loader/>}>
           <Routes>
-            <Route path="/" element={<Navigate to={"/home"} replace />} />
-            <Route path="home" element={<Home />} />
-            <Route path="filmes" element={<Filmes />} />
-            <Route path="series" element={<Series />} />
-            <Route path="detalhes/:id" element={<Detalhes />} />
+            <Route element={<MainLayout />}>
+              <Route path="home" index element={<Home />} />
+              <Route path="filmes" element={<Filmes />} />
+              <Route path="series" element={<Series />} />
+            </Route>
+            <Route element={<SecondaryLayout/>}>
+              <Route path="detalhes/:id" element={<Detalhes />} />
+            </Route>
+
             <Route path="*" element={<Navigate to="/home" />} />
           </Routes>
         </Suspense>

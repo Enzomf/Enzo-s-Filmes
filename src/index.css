@@ -23,18 +23,25 @@ a {
   .swiper-button-prev::after {
     display: none;
   }
-  .navbarPc{
+  .navbarPc {
     display: none;
   }
-
 }
 @media (min-width: 801px) {
-  .navBarC {
+  main div.sm {
     display: none;
   }
 
+
 }
 
+@media (max-width: 801px) {
+  header div.lg-md {
+    display: none;
+  }
+
+
+}
 
 
 

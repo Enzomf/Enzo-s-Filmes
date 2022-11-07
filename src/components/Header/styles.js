@@ -9,24 +9,33 @@ const HeaderC = styled.header`
   justify-content: space-between;
   align-items: center;
   position: relative;
+  gap: 2em;
 
   @media (max-width: 800px) {
     margin-bottom: 1em;
 
-    .navbarPc{
-        display: none;
+    header nav.hide {
+    display: none;
     }
   }
 `;
+
+const LeftHeader = styled.div`
+  display:"flex";
+  align-items:"center";
+
+`
 
 
 const SeachWrapper = styled.form`
   display: flex;
   gap: 1em;
-  width: 350px;
+  
 
   .search {
     background-color: transparent;
+    font-size: 1.8em;
+    transform: translateX(-25px);
     cursor: pointer;
     border: none;
   }
@@ -48,4 +57,5 @@ export {
   HeaderC,
   SeachBar,
   SeachWrapper,
+  LeftHeader
 };
