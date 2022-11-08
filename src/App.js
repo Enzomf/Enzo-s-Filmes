@@ -28,12 +28,11 @@ function App() {
               <Route path="home" index element={<Home />} />
               <Route path="filmes" element={<Filmes />} />
               <Route path="series" element={<Series />} />
+              <Route path="search" element={<Search/>}/>
             </Route>
             <Route element={<SecondaryLayout/>}>
               <Route path="detalhes/:id" element={<Detalhes />} />
-              <Route path="search" element={<Search/>}/>
             </Route>
-
             <Route path="*" element={<Navigate to="/home" />} />
           </Routes>
         </Suspense>

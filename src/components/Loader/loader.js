@@ -5,12 +5,9 @@ import { LoadingContainer } from "./styles"
 function Loader() {
 
     return (
-
         <LoadingContainer>
             <CircularProgress />
         </LoadingContainer>
-
-
     )
 }
 

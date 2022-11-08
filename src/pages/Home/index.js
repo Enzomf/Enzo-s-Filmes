@@ -58,7 +58,7 @@ function Home() {
         slug: "Em Alta",
         icon: <AiFillFire />,
         content: await (await axios_.get("/trending/all/day")).data
-  
+
       },
       {
         slug: "Recomendados",
@@ -88,7 +88,7 @@ function Home() {
         slug: "Comédia",
         type: "tv",
         icon: <BiLaugh />,
-        content:  await (await axios_.get("/discover/movie?with_genres=35")).data
+        content: await (await axios_.get("/discover/movie?with_genres=35")).data
       },
       {
         slug: "Documentários",
@@ -118,11 +118,13 @@ function Home() {
     <Container>
       {homeMidia.data && (
         <>
+
           <ContentCarrousel content={homeMidia.data[0]} />
 
-          <ContentCarrousel content={homeMidia.data[1]} />
-
-          <LazyLoad offset={0.80}>
+    
+            <ContentCarrousel content={homeMidia.data[1]} />
+     
+          <LazyLoad offset={0.80} >
             <ContentCarrousel content={homeMidia.data[2]} />
           </LazyLoad>
           <LazyLoad offset={0.80}>

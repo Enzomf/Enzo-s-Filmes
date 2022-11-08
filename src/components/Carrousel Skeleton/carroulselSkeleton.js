@@ -2,7 +2,7 @@ import { Navigation } from "swiper"
 import { Skeleton } from "@mui/material"
 import { SwiperSlide, Swiper } from "swiper/react"
 
-import { Midiacard, MediaSection, SectionTitle } from "../Content Carrousel/styles"
+import { MediaSection, SectionTitle } from "../Content Carrousel/styles"
 import { MediaCardC } from "../Media Card/styles"
 
 

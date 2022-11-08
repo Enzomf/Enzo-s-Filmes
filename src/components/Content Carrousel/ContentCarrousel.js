@@ -1,15 +1,9 @@
-
 import { Navigation, Lazy } from "swiper";
-import React, { memo } from "react";
-
 import { SwiperSlide, Swiper } from "swiper/react";
 
-
-import {
-  SectionTitle,
-  MediaSection,
-} from "./styles";
+import { SectionTitle, MediaSection } from "./styles";
 import MediaCard from "../Media Card/MediaCard";
+
 function ContentCarrousel({ content }) {
   return (
     <MediaSection>
@@ -23,7 +17,6 @@ function ContentCarrousel({ content }) {
         slidesPerView={"auto"}
         className="mySwiper"
         spaceBetween={30}
-
         loop="true"
         lazy={true}
         preloadImages={false}
@@ -89,7 +82,7 @@ function ContentCarrousel({ content }) {
       >
         {content.content.results.map((media) => (
           <SwiperSlide key={media.id} className="swiper-lazy">
-           <MediaCard content={content} media={media} /> 
+            <MediaCard content={content} media={media} />
           </SwiperSlide>
         ))}
       </Swiper>
@@ -97,4 +90,4 @@ function ContentCarrousel({ content }) {
   );
 }
 
-export default memo(ContentCarrousel);
+export default ContentCarrousel

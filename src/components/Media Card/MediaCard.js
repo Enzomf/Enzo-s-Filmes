@@ -8,7 +8,7 @@ function MediaCard({ media, content, }) {
     return (
         media.poster_path|| media.profile_path? <MediaCardC>
             <Link
-                to={`/detalhes/${media.id}?type="${content.media_type || content.media_type || media.media_type}"`}
+                to={`/detalhes/${media.id}?type="${content.media_type || content.type || media.media_type}"`}
             >
                 <LazyLoad height={250} offset={0.95}>
                     <Image src={`https://image.tmdb.org/t/p/w300${media.poster_path|| media.profile_path}`}/>

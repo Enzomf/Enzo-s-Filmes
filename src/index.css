@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
-body {
-  background-color: #000000;
+html {
+  scroll-behavior: smooth;
 }
 
 * {
@@ -11,9 +11,8 @@ body {
   font-family: "Bebas Neue", cursive;
 }
 
-a {
-  text-decoration: none;
-  color: #ffff;
+body {
+  background-color: #000000;
 }
 
 @media (max-width: 800px) {
@@ -46,6 +45,11 @@ a {
 
 h2{
   color: #FFFF;
+  font-weight: normal;
+  font-size: 2em;
+}
+h2 span {
+  color:#1976d2;
 }
 
 .pagination{

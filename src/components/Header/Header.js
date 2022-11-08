@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 import { TextField } from "@mui/material";
 import { FiSearch } from "react-icons/fi"
 
@@ -9,16 +8,15 @@ import NavBar from "../NavBar/Navbar";
 import logo from "../../images/logo.svg";
 import { HeaderC, SeachWrapper, } from "./styles";
 
-
-
 function Header() {
+
   const inputS = useRef(null)
   const navigate = useNavigate()
 
   function handleSubmit(e) {
     e.preventDefault()
     navigate(`/search?query=${inputS.current.value}`)
-   
+    
   }
 
   return (
@@ -33,7 +31,7 @@ function Header() {
         </div>
       </div>
 
-      <SeachWrapper method="GET" onSubmit={handleSubmit}>
+      <SeachWrapper method="GET" onChange={handleSubmit}>
         <TextField
           inputRef={inputS}
           name="query"

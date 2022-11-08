@@ -1,18 +1,14 @@
+import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Autoplay } from "swiper";
-import { Link } from "react-router-dom";
 
-import { CarrouselContainer, Image } from "./styles";
 import axios_ from "../../axiosConfig";
+import { CarrouselContainer, Image } from "./styles";
 
 export default function MainCarrousel() {
-  async function getMainCarrouselMidia() {
-    let randomPage = 0;
 
-    do {
-      randomPage = Math.floor(Math.random() * 2);
-    } while (randomPage === 0);
+  async function getMainCarrouselMidia() {
 
     const response = await (await axios_.get("/trending/all/day?page=1")).data
 
@@ -24,8 +20,6 @@ export default function MainCarrousel() {
     queryFn: getMainCarrouselMidia,
     refetchOnWindowFocus: false,
   });
-
-
 
   return (
     <CarrouselContainer>
