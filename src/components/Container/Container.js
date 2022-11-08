@@ -1,4 +1,4 @@
-import { ContainerC} from "./styles";
+import { ContainerC } from "./styles";
 
 export default function Container({children}){
  return (

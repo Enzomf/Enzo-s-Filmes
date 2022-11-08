@@ -1,8 +1,7 @@
 import { Outlet } from "react-router-dom";
 
-import Container from "../components/Container/Container";
+import ContainerDet from "../components/Container/ContainerDet";
 import Header from "../components/Header/Header";
-
 
 
 function SecondaryLayout() {
@@ -10,9 +9,9 @@ function SecondaryLayout() {
     return (
         <>
             <Header />
-            <Container>
+            <ContainerDet>
                 <Outlet />
-            </Container>
+            </ContainerDet>
         </>
     )
 

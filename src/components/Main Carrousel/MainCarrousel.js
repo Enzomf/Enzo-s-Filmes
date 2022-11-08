@@ -58,8 +58,8 @@ export default function MainCarrousel() {
               <Link
                 to={
                   content.media_type === "tv"
-                    ? `/detalhes/${content.id}?type="tv"`
-                    : `/detalhes/${content.id}?type="movie"`
+                    ? `/detalhes/${content.id}?type=tv`
+                    : `/detalhes/${content.id}?type=movie`
                 }
               >
                 <Image

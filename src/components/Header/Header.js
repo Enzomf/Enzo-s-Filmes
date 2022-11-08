@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { TextField } from "@mui/material";
-import { FiSearch } from "react-icons/fi"
+
 
 
 import NavBar from "../NavBar/Navbar";
@@ -35,6 +35,7 @@ function Header() {
         <TextField
           inputRef={inputS}
           name="query"
+          placeholder="Filmes, Series e Pessoas"
           variant="filled"
           color="primary"
           size="medium"
@@ -50,14 +51,14 @@ function Header() {
               width: "100%",
               padding: "0"
             },
+            "input::placeholder":{
+              fontSize: "1.6rem",
+              margin:"0 auto"
+            },
 
           }}
           type={"search"}
         />
-
-        <button type="submit" className="search">
-          <FiSearch color="#FFFF" />
-        </button>
       </SeachWrapper>
     </HeaderC>
   );
