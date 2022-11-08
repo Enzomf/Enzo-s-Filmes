@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkenzo_filmes=self.webpackChunkenzo_filmes||[]).push([[21],{8021:function(e,l,n){n.r(l);var s=n(885),o=n(7689),t=n(6731),c=n(184);l.default=function(){var e=(0,o.UO)(),l=(0,t.lr)(),n=(0,s.Z)(l,1)[0];return console.log(e),console.log(n.get("type")),(0,c.jsx)("h1",{children:"Detalhes"})}}}]);
-//# sourceMappingURL=21.04ce9d0e.chunk.js.map
