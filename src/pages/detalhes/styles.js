@@ -68,7 +68,7 @@ const Content = styled.div`
     padding: 0 1.5em;
     width: 100%;
     height: 100%;
-    overflow: scroll;
+    overflow-Y: scroll;
     
 
 
