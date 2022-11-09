@@ -6,7 +6,7 @@ const Container = styled.div`
     position: absolute;
     max-width: 100%;
     min-height:100%;
-    overflow: scroll;
+  
     width: 100%;
     left: 0;
     border-radius: 15px 15px  0 0;
@@ -67,7 +67,9 @@ const ImageTop = styled.div`
 const Content = styled.div`
     padding: 0 1.5em;
     width: 100%;
-    height: 50vh;
+    height: 100%;
+    overflow: scroll;
+    
 
 
     p {
@@ -85,7 +87,7 @@ const GenresWrapper = styled.div`
     display: flex;
     width:100%;
     gap: 1em;
-    margin-top: 1em;
+    margin: 1.2em 0;
 
     span {
         color: #FFF;
@@ -94,4 +96,38 @@ const GenresWrapper = styled.div`
     }
 `
 
-export { Container, ImageTop, Content, GenresWrapper }
+const InfoWrapper = styled.div`
+    display: flex;
+    width: 100%;
+    gap: 1em;
+   
+   
+
+    span {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        color: #FFFF;
+        max-width: 30%;
+       
+        
+    }
+    span p {
+        font-size: 0.8em;
+        line-height: 21px;
+        text-align: left;
+    }
+    span h4 {
+        font-weight: normal;
+        font-size: 1.2em;
+    }
+
+    span img {
+        width: 50px;
+    }
+    
+
+`
+
+
+export { Container, ImageTop, Content, GenresWrapper, InfoWrapper }

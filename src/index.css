@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
+
+
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -15,12 +19,28 @@ body {
   background-color: #000000;
 }
 
+
+.media.swiper-slide { 
+  flex-shrink: unset;
+}
+
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #FFFF;
+  z-index: 9999;
+  font-size: 1.8em;
+}
+
+
+
 @media (max-width: 800px) {
   .swiper-button-next,
   .swiper-button-prev,
   .swiper-button-next::after,
   .swiper-button-prev::after {
     display: none;
+    background-color: #FFFF;
   }
   .navbarPc {
     display: none;

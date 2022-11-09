@@ -8,11 +8,11 @@ function NavBar() {
   const path = location.pathname;
 
   const [value, setValue] = useState(
-    path.includes("home") ? 0 : path.includes("filmes") ? 1 : path.includes("series")?2:0
+    path.includes("home") ? 0 : path.includes("filmes") ? 1 : path.includes("series")?2: path.includes("search") || path.includes("detalhes")? undefined : undefined
   );
 
   useEffect(() => {
-      setValue( path.includes("home") ? 0 : path.includes("filmes") ? 1 : path.includes("series")?2:0)
+      setValue(  path.includes("home") ? 0 : path.includes("filmes") ? 1 : path.includes("series")?2: path.includes("search") || path.includes("detalhes")? undefined : undefined)
   }, [path])
   
 

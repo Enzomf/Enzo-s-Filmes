@@ -86,7 +86,7 @@ function Home() {
       },
       {
         slug: "Comédia",
-        type: "tv",
+        type: "movie",
         icon: <BiLaugh />,
         content: await (await axios_.get("/discover/movie?with_genres=35")).data
       },

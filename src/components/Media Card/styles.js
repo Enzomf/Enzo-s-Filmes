@@ -4,6 +4,7 @@ const MediaCardC = styled.div`
     width: 200px;
     height: 250px;
     position: relative;
+    overflow: hidden;
 
 `
 const MediaRating = styled.div`
@@ -19,8 +20,9 @@ const MediaRating = styled.div`
     background-color: #000000;
     color:#FFFF
 `
-    const Image = styled.img`
+const Image = styled.img`
     width: 95%;
     height: 95%;
+    border-radius: 6px;
     `
-    export { MediaCardC, MediaRating, Image }
+export { MediaCardC, MediaRating, Image }

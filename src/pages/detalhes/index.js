@@ -1,16 +1,17 @@
-import { useParams, useSearchParams } from 'react-router-dom'
+import { useState } from 'react';
 import { useQuery } from 'react-query';
+import { useParams, useSearchParams } from 'react-router-dom'
 
 import axios_ from '../../axiosConfig';
+import CastingCarrousel from '../../components/Casting Carrousel/CastingCarrousel';
 import NavBar from "../../components/NavBar/Navbar"
-import { Container, Content, GenresWrapper, ImageTop } from './styles';
-import { useState } from 'react';
+import { Container, Content, GenresWrapper, ImageTop, InfoWrapper } from './styles';
 
 function Detalhes() {
 
     const midiaId = useParams();
     const [searchParams] = useSearchParams();
-    const [trailer, setTrailer] = useState(null)
+    const [trailer, setTrailer] = useState([])
 
     async function getDetails() {
         const media_id = midiaId.id
@@ -22,7 +23,7 @@ function Detalhes() {
             casting: await (await axios_.get(`/${media_type}/${media_id}/credits`)).data,
             similars: await (await axios_.get(`/${media_type}/${media_id}/similar`)).data
         }
-        console.log(data.trailer)
+        console.log(data)
 
         setTrailer(data.trailer.results.filter(video => video.name.includes("Trailer")))
 
@@ -35,7 +36,7 @@ function Detalhes() {
 
 
 
-    if (isLoading) return <h1>dhsaldhsao</h1>
+    if (isLoading) return (<h1>dhsaldhsao</h1>)
 
     return (
         data.details.id &&
@@ -57,11 +58,41 @@ function Detalhes() {
                         ))}
                     </GenresWrapper>
 
-                    {trailer ? (<iframe width="100%" height="250px" src={`https://www.youtube.com/embed/${trailer[0].key}?autoplay=1&showinfo=0`} title={data.details.original_name}>
+                    {trailer.length > 0 ? (<iframe width="100%" height="240px" allowFullScreen="1" contextMenu='1' src={`https://www.youtube.com/embed/${trailer[0].key}`} title={data.details.original_name} frameBorder="0">
 
                     </iframe>) : null
 
                     }
+
+
+                    <h2 style={{ margin: ".5em 0 " }}>INFORMAÇÕES</h2>
+
+                    <InfoWrapper>
+                        <span>
+                            <h4>NOME ORIGINAL</h4>
+                           <p> {data.details.original_name || data.details.original_title}</p>
+                        </span>
+                        <span>
+                            <h4>SITUAÇÃO</h4>
+                            <p>{data.details.status}</p>
+                        </span>
+                        <span>
+                            <h4>ESTREIA</h4>
+                            <p>{new Date(data.details.first_air_date || data.details.release_date).getFullYear()}</p>
+                        </span>
+                        {data.details.networks && <span>
+                            <h4>NETWORK</h4>
+                            <img src={`https://image.tmdb.org/t/p/w200/${data.details.networks[0].logo_path}`} alt={data.details.networks[0].name} />
+                        </span>
+                        }
+                    </InfoWrapper>
+
+
+                    <h2 style={{ margin: ".5em 0 " }}>Casting</h2>
+
+                    <CastingCarrousel casting={data.casting.cast} />
+
+                    
                 </Content>
             </Container>
         </>
