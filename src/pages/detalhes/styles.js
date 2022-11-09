@@ -9,7 +9,7 @@ const Container = styled.div`
   
     width: 100%;
     left: 0;
-    border-radius: 15px 15px  0 0;
+    border-radius: 6px 6px  0 0;
     animation: detalhes 1s ease;
     transform: translateY(20px);
     overflow: hidden;
