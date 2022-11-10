@@ -44,12 +44,10 @@ function Header() {
           variant="filled"
           color="primary"
           size="medium"
-        
-      
+          className="search-bar"
+    
           sx={{
-            ".css-19mk8g1-MuiInputBase-root-MuiFilledInput-root:after": {
-              border: "#1976d2 2px solid"
-            },
+  
             input: {
               color: "#FFFF",
               fontFamily: "'Bebas Neue',cursive",
@@ -58,14 +56,12 @@ function Header() {
               width: "100%",
               padding: "0",
               display: display,
-
             },
             "input::placeholder": {
               fontSize: "1.4rem",
               margin: "0 auto",
               width:"100%"
             },
-
           }}
           type={"search"}
         />

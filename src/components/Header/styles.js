@@ -39,6 +39,15 @@ const SeachWrapper = styled.form`
     border: none;
   }
 
+  .css-19mk8g1-MuiInputBase-root-MuiFilledInput-root:after, .css-17spqnz::after{
+    border: 2px solid #1976d2;
+  }
+  .search-bar input::after {
+    border: 1px solid red;
+  }
+
+  
+
  .icon {
     font-size: 1.5em;
     color:#FFFF;
@@ -59,8 +68,6 @@ const SeachBar = styled.input`
   outline: none;
   color: #ffff;
   line-height: 1.3em;
-  &::placeholder {
-  }
 `;
 
 export {

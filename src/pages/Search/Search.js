@@ -23,7 +23,7 @@ function Search() {
     async function getResults() {
         const query = searchParams.get("query")
 
-        if(!query){
+        if (!query) {
             setResults([])
             navigate("/home")
             return
@@ -38,7 +38,6 @@ function Search() {
 
     useEffect(() => {
         getResults()
-        console.log(results)
     }, [searchParams, page])
 
 
@@ -48,22 +47,23 @@ function Search() {
             <h2 ref={topRef}>Resultados para: <span>{searchParams.get("query")}</span></h2>
 
             <Container>
-                {
-                    results.results.map((result, index) => (
-                        <MediaCard key={index} content={result} media={result} />
 
-                    ))}
+                    {
+                        results.results.map((result, index) => (
+                            <MediaCard key={index} content={result} media={result} />
 
+                        ))
+                    }
+            
             </Container>
 
             <div className="pagination">
-            <Pagination count={results.total_pages} variant="outlined" color="primary" sx={{button:{background:"#FFFF"},  div:{color:"#FFFF", fontWeight:"bold"}}} onChange={handlePaginationChange}/>
-             
+                <Pagination count={results.total_pages} variant="outlined" color="primary" sx={{ button: { background: "#FFFF" }, div: { color: "#FFFF", fontWeight: "bold" } }} onChange={handlePaginationChange} />
             </div>
 
         </>
     )
-    if(!results)return(
+    if (!results) return (
         <h2>Pesquise por Filmes Series ou Pessoas</h2>
     )
 
