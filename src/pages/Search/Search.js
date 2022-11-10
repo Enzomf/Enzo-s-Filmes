@@ -15,7 +15,23 @@ function Search() {
 
     const executeScroll = () => topRef.current.scrollIntoView()
     function handlePaginationChange(e) {
+
+        if (e.target.innerHTML.includes('<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>')) {
+
+            setPage(prev => prev + 1)
+            return
+        }
+
+        if (e.target.innerHTML.includes('<path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>')) {
+
+            if (page === 1) {
+                return
+            }
+            setPage(prev => prev - 1)
+            return
+        }
         let p = e.target.innerText
+
         setPage(p)
         executeScroll()
     }
@@ -48,17 +64,17 @@ function Search() {
 
             <Container>
 
-                    {
-                        results.results.map((result, index) => (
-                            <MediaCard key={index} content={result} media={result} />
+                {
+                    results.results.map((result, index) => (
+                        <MediaCard key={index} content={result} media={result} />
 
-                        ))
-                    }
-            
+                    ))
+                }
+
             </Container>
 
             <div className="pagination">
-                <Pagination count={results.total_pages} variant="outlined" color="primary" sx={{ button: { background: "#FFFF" }, div: { color: "#FFFF", fontWeight: "bold" } }} onChange={handlePaginationChange} />
+                <Pagination count={results.total_pages} variant="text" shape="rounded" color="primary" sx={{ button: { background: "#FFFF" }, div: { color: "#FFFF", fontWeight: "bold" }, "button:hover":{background:"#1976d2", opacity:0.8}}} onChange={handlePaginationChange} />
             </div>
 
         </>
