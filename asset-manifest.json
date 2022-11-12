@@ -1,28 +1,28 @@
 {
   "files": {
     "main.css": "/Enzo-s-Filmes/static/css/main.d49c4c15.css",
-    "main.js": "/Enzo-s-Filmes/static/js/main.521939ed.js",
+    "main.js": "/Enzo-s-Filmes/static/js/main.fed2f5c7.js",
     "static/js/668.b8cb8aa0.chunk.js": "/Enzo-s-Filmes/static/js/668.b8cb8aa0.chunk.js",
     "static/js/745.e97aa074.chunk.js": "/Enzo-s-Filmes/static/js/745.e97aa074.chunk.js",
     "static/js/264.fb3c8813.chunk.js": "/Enzo-s-Filmes/static/js/264.fb3c8813.chunk.js",
-    "static/js/20.5083e2e7.chunk.js": "/Enzo-s-Filmes/static/js/20.5083e2e7.chunk.js",
+    "static/js/20.7c072022.chunk.js": "/Enzo-s-Filmes/static/js/20.7c072022.chunk.js",
     "static/js/653.0efe2b89.chunk.js": "/Enzo-s-Filmes/static/js/653.0efe2b89.chunk.js",
     "static/js/425.9ffe0930.chunk.js": "/Enzo-s-Filmes/static/js/425.9ffe0930.chunk.js",
     "static/js/853.e0ff7056.chunk.js": "/Enzo-s-Filmes/static/js/853.e0ff7056.chunk.js",
-    "static/media/logo.svg": "/Enzo-s-Filmes/static/media/logo.c44b05dc7e4c2818ce4b74b39238aa31.svg",
+    "static/media/logo.svg": "/Enzo-s-Filmes/static/media/logo.dff1fbc756a1f031190dd830717abe43.svg",
     "index.html": "/Enzo-s-Filmes/index.html",
     "main.d49c4c15.css.map": "/Enzo-s-Filmes/static/css/main.d49c4c15.css.map",
-    "main.521939ed.js.map": "/Enzo-s-Filmes/static/js/main.521939ed.js.map",
+    "main.fed2f5c7.js.map": "/Enzo-s-Filmes/static/js/main.fed2f5c7.js.map",
     "668.b8cb8aa0.chunk.js.map": "/Enzo-s-Filmes/static/js/668.b8cb8aa0.chunk.js.map",
     "745.e97aa074.chunk.js.map": "/Enzo-s-Filmes/static/js/745.e97aa074.chunk.js.map",
     "264.fb3c8813.chunk.js.map": "/Enzo-s-Filmes/static/js/264.fb3c8813.chunk.js.map",
-    "20.5083e2e7.chunk.js.map": "/Enzo-s-Filmes/static/js/20.5083e2e7.chunk.js.map",
+    "20.7c072022.chunk.js.map": "/Enzo-s-Filmes/static/js/20.7c072022.chunk.js.map",
     "653.0efe2b89.chunk.js.map": "/Enzo-s-Filmes/static/js/653.0efe2b89.chunk.js.map",
     "425.9ffe0930.chunk.js.map": "/Enzo-s-Filmes/static/js/425.9ffe0930.chunk.js.map",
     "853.e0ff7056.chunk.js.map": "/Enzo-s-Filmes/static/js/853.e0ff7056.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d49c4c15.css",
-    "static/js/main.521939ed.js"
+    "static/js/main.fed2f5c7.js"
   ]
 }
