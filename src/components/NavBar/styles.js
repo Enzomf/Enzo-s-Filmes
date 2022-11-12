@@ -7,4 +7,5 @@ const NavBarC = styled.nav`
     @media (min-width: 801px) {   
     }
 `
+
 export  {NavBarC}

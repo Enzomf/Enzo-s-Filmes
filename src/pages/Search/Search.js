@@ -1,18 +1,20 @@
-import { Pagination } from "@mui/material";
+
 import { useEffect, useRef, useState } from "react";
-import InfiniteScroll from "react-infinite-scroll-component";
 import { useSearchParams, useNavigate } from "react-router-dom";
+import {AiOutlineArrowUp}from "react-icons/ai"
+
 
 import axios_ from "../../axiosConfig";
 import Container from "./styles";
-import Loader from "../../components/Loader/loader";
 import MediaCard from "../../components/Media Card/MediaCard";
+import { Button } from "../../components/To Top/styled";
 
 function Search() {
   const topRef = useRef();
   const [page, setPage] = useState(1);
   const navigate = useNavigate();
   const [results, setResults] = useState([]);
+  const [totalResults, setTotalResults] = useState(null)
 
   const executeScroll = () => topRef.current.scrollIntoView();
 
@@ -37,14 +39,15 @@ function Search() {
         `/search/multi?query=${query}&language=pt-BR&page=${page}`
       )
     ).data;
-   
+    
+      setTotalResults(results.total_results)
       setResults(results.results);
   
   }
 
   async function loadMoreResults(){
     const query = searchParams.get("query");
-    if(page === 1) return
+    if(page === 1 || page >totalResults) return null
     const results = await (
       await axios_.get(
         `/search/multi?query=${query}&language=pt-BR&page=${page}`
@@ -76,7 +79,7 @@ function Search() {
 
     return () => observable.disconnect();
   },[]);
-  console.log(page)
+  console.log(results)
 
   if (results)
     return (
@@ -92,6 +95,7 @@ function Search() {
 
           <div id="sentinela" style={{ width: "20px", height: "20px" }}></div>
         </Container>
+        <Button onClick={executeScroll} className="toTop"><AiOutlineArrowUp color="white"/></Button>
       </>
     );
   if (!results) return <h2>Pesquise por Filmes Series ou Pessoas</h2>;
