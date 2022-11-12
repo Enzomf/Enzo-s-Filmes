@@ -1,90 +1,100 @@
 import { Pagination } from "@mui/material";
-import { useSearchParams, useNavigate } from "react-router-dom"
 import { useEffect, useRef, useState } from "react";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { useSearchParams, useNavigate } from "react-router-dom";
+
+import axios_ from "../../axiosConfig";
+import Container from "./styles";
+import Loader from "../../components/Loader/loader";
 import MediaCard from "../../components/Media Card/MediaCard";
 
-import axios_ from "../../axiosConfig"
-import Container from "./styles"
-
 function Search() {
+  const topRef = useRef();
+  const [page, setPage] = useState(1);
+  const navigate = useNavigate();
+  const [results, setResults] = useState([]);
 
-    const [results, setResults] = useState([])
-    const [page, setPage] = useState(1)
-    const topRef = useRef()
-    const navigate = useNavigate()
+  const executeScroll = () => topRef.current.scrollIntoView();
 
-    const executeScroll = () => topRef.current.scrollIntoView()
-    function handlePaginationChange(e) {
+  async function getResults() {
+      const query = searchParams.get("query");
 
-        if (e.target.innerHTML.includes('<path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>')) {
+    if (!query) {
+      setResults([]);
+      navigate("/home");
+      return;
+    }
+ setPage(1)
 
-            setPage(prev => prev + 1)
-            return
-        }
-
-        if (e.target.innerHTML.includes('<path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>')) {
-
-            if (page === 1) {
-                return
-            }
-            setPage(prev => prev - 1)
-            return
-        }
-        let p = e.target.innerText
-
-        setPage(p)
-        executeScroll()
+    if (!query) {
+      setResults([]);
+      navigate("/home");
+      return;
     }
 
-    async function getResults() {
-        const query = searchParams.get("query")
+    const results = await (
+      await axios_.get(
+        `/search/multi?query=${query}&language=pt-BR&page=${page}`
+      )
+    ).data;
+   
+      setResults(results.results);
+  
+  }
 
-        if (!query) {
-            setResults([])
-            navigate("/home")
-            return
-        }
+  async function loadMoreResults(){
+    const query = searchParams.get("query");
+    if(page === 1) return
+    const results = await (
+      await axios_.get(
+        `/search/multi?query=${query}&language=pt-BR&page=${page}`
+      )
+    ).data;
 
-        const results = await (await axios_.get(`/search/multi?query=${query}&language=pt-BR&page=${page}`)).data
+    setResults((prev) => [...prev, ...results.results]);
+    console.log(results);
+  }
 
-        setResults(results)
-    }
+  const [searchParams] = useSearchParams();
 
-    const [searchParams] = useSearchParams();
+  useEffect(() => {
+    getResults();
+  }, [searchParams]);
 
-    useEffect(() => {
-        getResults()
-    }, [searchParams, page])
+  useEffect(()=>{
+    loadMoreResults()
+  },[page])
 
+  useEffect(() => {
+    const observable = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+            setPage((prev)=> prev + 1)
+      }
+    });
 
-    if (results.results) return (
-        <>
+    observable.observe(document.querySelector("#sentinela"));
 
-            <h2 ref={topRef}>Resultados para: <span>{searchParams.get("query")}</span></h2>
+    return () => observable.disconnect();
+  },[]);
+  console.log(page)
 
-            <Container>
+  if (results)
+    return (
+      <>
+        <h2 ref={topRef}>
+          Resultados para: <span>{searchParams.get("query")}</span>
+        </h2>
 
-                {
-                    results.results.map((result, index) => (
-                        <MediaCard key={index} content={result} media={result} />
+        <Container>
+          {results.map((result, index) => (
+            <MediaCard key={index} media={result} />
+          ))}
 
-                    ))
-                }
-
-            </Container>
-
-            <div className="pagination">
-                <Pagination count={results.total_pages} variant="text" shape="rounded" color="primary" sx={{ button: { background: "#FFFF" }, div: { color: "#FFFF", fontWeight: "bold" }, "button:hover":{background:"#1976d2", opacity:0.8}}} onChange={handlePaginationChange} />
-            </div>
-
-        </>
-    )
-    if (!results) return (
-        <h2>Pesquise por Filmes Series ou Pessoas</h2>
-    )
-
-
-
+          <div id="sentinela" style={{ width: "20px", height: "20px" }}></div>
+        </Container>
+      </>
+    );
+  if (!results) return <h2>Pesquise por Filmes Series ou Pessoas</h2>;
 }
 
-export default Search
+export default Search;
